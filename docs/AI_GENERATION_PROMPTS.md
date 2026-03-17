@@ -9,19 +9,23 @@ Use these prompts with your preferred AI image generation tool (Midjourney, DALL
 
 ### Laundry Room Background (1280×720)
 ```
-Pixel art cozy laundry room, top-down 3/4 isometric view, 64×64 grid,
-light cream and beige walls, soft tiled floor, wooden shelves in background,
-modern washing machine center-right, three wicker baskets in foreground,
+Pixel art cozy laundry room interior, top-down 3/4 isometric view, 64×64 grid,
+empty room foundation - light cream and beige walls, soft tiled floor,
+wooden shelves/storage racks in background, simple furniture or wall details,
+NO washing machine, NO baskets, NO clothing visible (these will be placed separately),
+open foreground floor space for asset placement,
 warm color palette (#F5F1E8, #E8DCC8, #C4B5A0, #5D4E37),
-soft lighting, no anti-aliasing, flat colors, cute aesthetic,
+soft warm lighting from above, no anti-aliasing, flat colors, cute aesthetic,
 transparent background, Stardew Valley art style, 1280×720 resolution
 ```
 
 **Variations** (run 3-4 times for different layouts):
-- Add window with sunlight
-- Add small desk/folding table
-- Add hanging shelf unit
-- Add sink on left side
+- Version A: Window with sunlight on left wall
+- Version B: Small counter/sink on left, open floor center-right
+- Version C: Hanging rack/shelf on back wall, minimal clutter
+- Version D: Simple minimal room, maximum open floor space
+
+**Key**: Generate just the ROOM environment. Asset placement area should be clear and empty in foreground.
 
 ---
 

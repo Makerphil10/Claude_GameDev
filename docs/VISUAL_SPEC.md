@@ -43,17 +43,28 @@ Functional:
 
 ### 2.1 Laundry Room Background
 **Dimensions**: 1280×720 pixels
-**Layers**:
-- Background (walls, floor)
-- Fixed furniture (shelves, sink)
-- Interactive areas (baskets, machine)
+**Concept**: Room foundation/environment layer ONLY (compositable background)
 
-**Elements**:
+**Layers**:
+- Background (walls, floor, lighting)
+- Fixed furniture (shelves, racks, sink - minimal)
+- **NO dynamic assets** (no washing machine, baskets, or clothing visible)
+
+**Elements to Include**:
 - Soft cream/beige walls with subtle texture
-- Tiled floor (light gray, 64×64 tiles)
-- Wooden shelves (upper left/right)
-- Washing machine (center-right, 256×256px)
-- 3 laundry baskets (various positions, 96×96px each)
+- Tiled floor (light gray, 64×64 tiles with perspective)
+- Wooden shelves/hanging rack in background (optional)
+- Simple counter/sink detail (optional)
+- Window with warm lighting (optional)
+- **Open foreground space** for asset placement
+
+**Elements to EXCLUDE**:
+- ✗ Washing machine (placed separately, 256×256px)
+- ✗ Laundry baskets (placed separately, 96×96px each)
+- ✗ Clothing items
+- ✗ Clutter that blocks asset placement
+
+**Note**: This is a compositable background layer. Other assets (baskets, machine, rack) will be placed on top of it at game runtime.
 
 ### 2.2 Laundry Baskets
 **Base size**: 96×96 pixels
