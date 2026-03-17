@@ -1,0 +1,126 @@
+{
+  "palette_name": "Laundry Day Game - Cozy Pixel Art Palette",
+  "colors": [
+    {
+      "name": "Cream/Off-white",
+      "hex": "#F5F1E8",
+      "rgb": [245, 241, 232],
+      "usage": "Primary background, UI base"
+    },
+    {
+      "name": "Light Beige",
+      "hex": "#E8DCC8",
+      "rgb": [232, 220, 200],
+      "usage": "Secondary background, highlights"
+    },
+    {
+      "name": "Warm Gray",
+      "hex": "#C4B5A0",
+      "rgb": [196, 181, 160],
+      "usage": "Mid-tone, furniture, shadows"
+    },
+    {
+      "name": "Dark Brown",
+      "hex": "#5D4E37",
+      "rgb": [93, 78, 55],
+      "usage": "Outlines, text, dark accents"
+    },
+    {
+      "name": "Soft Blue",
+      "hex": "#7DAAC1",
+      "rgb": [125, 170, 193],
+      "usage": "Clothing, buttons, accents"
+    },
+    {
+      "name": "Laundry Purple",
+      "hex": "#8B7BA8",
+      "rgb": [139, 123, 168],
+      "usage": "Clothing, basket variant, UI accents"
+    },
+    {
+      "name": "Soft Green",
+      "hex": "#A8C68F",
+      "rgb": [168, 198, 143],
+      "usage": "Clothing, button accents"
+    },
+    {
+      "name": "Warm Orange",
+      "hex": "#D4956E",
+      "rgb": [212, 149, 110],
+      "usage": "Accents, progress indicators, UI"
+    },
+    {
+      "name": "Success Green",
+      "hex": "#6BA86F",
+      "rgb": [107, 168, 111],
+      "usage": "Feedback, success states"
+    },
+    {
+      "name": "Alert Red",
+      "hex": "#D46464",
+      "rgb": [212, 100, 100],
+      "usage": "Warnings, negative feedback"
+    },
+    {
+      "name": "Warning Yellow",
+      "hex": "#F4D35E",
+      "rgb": [244, 211, 94],
+      "usage": "Cautions, highlights"
+    },
+    {
+      "name": "Text Dark",
+      "hex": "#2C2416",
+      "rgb": [44, 36, 22],
+      "usage": "Text, fine details, dark outlines"
+    },
+    {
+      "name": "White",
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "usage": "Clothing, highlights, clean items"
+    },
+    {
+      "name": "Black",
+      "hex": "#1A1A1A",
+      "rgb": [26, 26, 26],
+      "usage": "Clothing, dark items, depth"
+    },
+    {
+      "name": "Light Gray",
+      "hex": "#E2E2E2",
+      "rgb": [226, 226, 226],
+      "usage": "Floor tiles, light items"
+    },
+    {
+      "name": "Dark Blue Denim",
+      "hex": "#2C3E50",
+      "rgb": [44, 62, 80],
+      "usage": "Jeans, dark clothing"
+    },
+    {
+      "name": "Light Blue Denim",
+      "hex": "#5DADE2",
+      "rgb": [93, 173, 226],
+      "usage": "Light jeans variant"
+    },
+    {
+      "name": "Warm Brown",
+      "hex": "#8B6F47",
+      "rgb": [139, 111, 71],
+      "usage": "Sweater, wooden elements"
+    },
+    {
+      "name": "Soft Pink",
+      "hex": "#E8B4C8",
+      "rgb": [232, 180, 200],
+      "usage": "Pink clothing, soft accents"
+    },
+    {
+      "name": "Metal Gray",
+      "hex": "#A0A0A0",
+      "rgb": [160, 160, 160],
+      "usage": "Washing machine, metal items"
+    }
+  ],
+  "notes": "Import into Aseprite: File > Import Palette. Colors are ordered by usage category for organization."
+}
