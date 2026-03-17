@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0k2nj9sct1x3"]
+
+[ext_resource type="Script" resource_path="res://scripts/ui/main_scene.gd"]
+[ext_resource type="Script" resource_path="res://scripts/core/clothing_data.gd"]
+[ext_resource type="Script" resource_path="res://scripts/core/game_manager.gd"]
+
+[node name="Main" type="Node"]
+script = ExtResource("res://scripts/ui/main_scene.gd")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("res://scripts/core/game_manager.gd")
+
+[node name="ClothingData" type="Node" parent="."]
+script = ExtResource("res://scripts/core/clothing_data.gd")
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="GameViewport" type="Control" parent="Canvas"]
+layout_mode = 3
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="Canvas/GameViewport"]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+color = Color(0.85, 0.8, 0.75, 1)
+
+[node name="InfoLabel" type="Label" parent="Canvas/GameViewport"]
+layout_mode = 1
+anchors_left = 0.1
+anchors_top = 0.1
+anchors_right = 0.9
+anchors_bottom = 0.3
+text = "Laundry Sorting Game - MVP
+Click to begin sorting!"
+horizontal_alignment = 1
+vertical_alignment = 1

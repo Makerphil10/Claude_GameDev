@@ -1,0 +1,18 @@
+# Godot-specific
+.godot/
+*.export_presets.cfg
+export/
+builds/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

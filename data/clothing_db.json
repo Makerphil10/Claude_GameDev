@@ -1,0 +1,77 @@
+{
+  "clothing_items": [
+    {
+      "id": "white_tshirt",
+      "name": "White T-Shirt",
+      "color": "white",
+      "fabric_type": "cotton",
+      "temperature": 40,
+      "can_bleach": true,
+      "can_tumble_dry": true,
+      "max_spin": 1000
+    },
+    {
+      "id": "dark_jeans",
+      "name": "Dark Jeans",
+      "color": "dark_blue",
+      "fabric_type": "cotton",
+      "temperature": 30,
+      "can_bleach": false,
+      "can_tumble_dry": true,
+      "max_spin": 800
+    },
+    {
+      "id": "wool_sweater",
+      "name": "Wool Sweater",
+      "color": "gray",
+      "fabric_type": "wool",
+      "temperature": 30,
+      "can_bleach": false,
+      "can_tumble_dry": false,
+      "max_spin": 400
+    },
+    {
+      "id": "sports_shirt",
+      "name": "Sports Shirt",
+      "color": "black",
+      "fabric_type": "polyester",
+      "temperature": 40,
+      "can_bleach": false,
+      "can_tumble_dry": true,
+      "max_spin": 900
+    },
+    {
+      "id": "red_socks",
+      "name": "Red Socks",
+      "color": "red",
+      "fabric_type": "cotton",
+      "temperature": 60,
+      "can_bleach": false,
+      "can_tumble_dry": true,
+      "max_spin": 1000
+    }
+  ],
+  "baskets": [
+    {
+      "id": "basket_white_40",
+      "label": "White 40°",
+      "color": "white",
+      "temperature": 40,
+      "fabric_types": ["cotton"]
+    },
+    {
+      "id": "basket_dark_30",
+      "label": "Dark 30°",
+      "color": "dark_blue",
+      "temperature": 30,
+      "fabric_types": ["cotton", "polyester"]
+    },
+    {
+      "id": "basket_wool_30",
+      "label": "Wool 30°",
+      "color": "gray",
+      "temperature": 30,
+      "fabric_types": ["wool"]
+    }
+  ]
+}
