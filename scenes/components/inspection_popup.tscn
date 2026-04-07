@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://inspection_popup"]
+
+[ext_resource type="Script" path="res://scripts/components/inspection_popup.gd" id="1_ip"]
+
+[node name="InspectionPopup" type="CanvasLayer"]
+script = ExtResource("1_ip")
+
+[node name="DimBackground" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5)
+mouse_filter = 0
+
+[node name="PopupPanel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -230.0
+offset_right = 180.0
+offset_bottom = 230.0
+grow_horizontal = 3
+grow_vertical = 3
+
+[node name="VBox" type="VBoxContainer" parent="PopupPanel"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 348.0
+offset_bottom = 448.0
+
+[node name="ItemNameLabel" type="Label" parent="PopupPanel/VBox"]
+custom_minimum_size = Vector2(0, 30)
+text = "Item Name"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="ItemZoom" type="ColorRect" parent="PopupPanel/VBox"]
+custom_minimum_size = Vector2(0, 120)
+color = Color(0.9, 0.9, 0.9, 1)
+
+[node name="DescriptionLabel" type="Label" parent="PopupPanel/VBox"]
+custom_minimum_size = Vector2(0, 40)
+text = "Description goes here."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="CareTagLabel" type="Label" parent="PopupPanel/VBox"]
+text = "Care Instructions:"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 12
+
+[node name="CareTagContainer" type="HBoxContainer" parent="PopupPanel/VBox"]
+custom_minimum_size = Vector2(0, 44)
+alignment = 1
+
+[node name="CloseButton" type="Button" parent="PopupPanel/VBox"]
+custom_minimum_size = Vector2(0, 36)
+text = "Close"
