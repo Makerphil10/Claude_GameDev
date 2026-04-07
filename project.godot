@@ -15,12 +15,18 @@ config_version=5
 
 [application]
 
-config/name="Laundry Sorting Game"
-config/description="A cozy, educational laundry sorting game for kids"
+config/name="Cozy Laundry Sort"
+config/description="A cozy, educational laundry sorting game for kids and casual players"
 config/version="0.1.0"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/game_scene.tscn"
 config/features=PackedStringArray("4.6", "forward_plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/core/game_manager.gd"
+ClothingData="*res://scripts/core/clothing_data.gd"
+ProgressionManager="*res://scripts/core/progression_manager.gd"
 
 [display]
 
