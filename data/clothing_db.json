@@ -1,77 +1,406 @@
 {
+  "schema_version": 2,
+  "sort_rule_groups": {
+    "lights": ["white", "cream", "light_gray", "light_blue", "light_pink", "light_yellow"],
+    "darks":  ["black", "dark_blue", "dark_gray", "dark_green", "red", "navy"]
+  },
   "clothing_items": [
     {
       "id": "white_tshirt",
       "name": "White T-Shirt",
+      "description": "A classic cotton tee, fresh from the wardrobe.",
+      "unlock_level": 1,
       "color": "white",
+      "color_group": "lights",
       "fabric_type": "cotton",
+      "wash_method": "machine",
       "temperature": 40,
+      "care_icons": {
+        "temp": "temp_warm",
+        "fabric": "fabric_normal",
+        "dry": "dry_tumble",
+        "bleach": "bleach_yes",
+        "iron": "iron_yes"
+      },
+      "sort_bins": {
+        "levels_1_3": "bin_lights",
+        "levels_4_10": "bin_40",
+        "levels_11_plus": "bin_cotton_machine"
+      },
       "can_bleach": true,
       "can_tumble_dry": true,
-      "max_spin": 1000
+      "pocket_chance": 0.15,
+      "button_reward": 1
     },
     {
       "id": "dark_jeans",
       "name": "Dark Jeans",
+      "description": "Heavy denim - wash cool to keep the color.",
+      "unlock_level": 1,
       "color": "dark_blue",
-      "fabric_type": "cotton",
+      "color_group": "darks",
+      "fabric_type": "denim",
+      "wash_method": "machine",
       "temperature": 30,
+      "care_icons": {
+        "temp": "temp_cold",
+        "fabric": "fabric_heavy",
+        "dry": "dry_air",
+        "bleach": "bleach_no",
+        "iron": "iron_yes"
+      },
+      "sort_bins": {
+        "levels_1_3": "bin_darks",
+        "levels_4_10": "bin_30",
+        "levels_11_plus": "bin_cotton_machine"
+      },
       "can_bleach": false,
-      "can_tumble_dry": true,
-      "max_spin": 800
+      "can_tumble_dry": false,
+      "pocket_chance": 0.35,
+      "button_reward": 2
     },
     {
       "id": "wool_sweater",
       "name": "Wool Sweater",
-      "color": "gray",
+      "description": "A cozy knit. One hot wash and it's a doll's sweater.",
+      "unlock_level": 11,
+      "color": "cream",
+      "color_group": "lights",
       "fabric_type": "wool",
+      "wash_method": "machine",
       "temperature": 30,
+      "care_icons": {
+        "temp": "temp_cold",
+        "fabric": "fabric_delicate",
+        "dry": "dry_air",
+        "bleach": "bleach_no",
+        "iron": "iron_no"
+      },
+      "sort_bins": {
+        "levels_1_3": "bin_lights",
+        "levels_4_10": "bin_30",
+        "levels_11_plus": "bin_wool_delicate"
+      },
       "can_bleach": false,
       "can_tumble_dry": false,
-      "max_spin": 400
+      "pocket_chance": 0.0,
+      "button_reward": 3
     },
     {
       "id": "sports_shirt",
       "name": "Sports Shirt",
+      "description": "Breathable polyester - quick dry, cool wash.",
+      "unlock_level": 1,
       "color": "black",
+      "color_group": "darks",
       "fabric_type": "polyester",
+      "wash_method": "machine",
       "temperature": 40,
+      "care_icons": {
+        "temp": "temp_warm",
+        "fabric": "fabric_synthetic",
+        "dry": "dry_tumble",
+        "bleach": "bleach_no",
+        "iron": "iron_no"
+      },
+      "sort_bins": {
+        "levels_1_3": "bin_darks",
+        "levels_4_10": "bin_40",
+        "levels_11_plus": "bin_synthetics_machine"
+      },
       "can_bleach": false,
       "can_tumble_dry": true,
-      "max_spin": 900
+      "pocket_chance": 0.05,
+      "button_reward": 1
     },
     {
       "id": "red_socks",
       "name": "Red Socks",
+      "description": "Bright red - keep away from whites!",
+      "unlock_level": 1,
       "color": "red",
+      "color_group": "darks",
       "fabric_type": "cotton",
+      "wash_method": "machine",
       "temperature": 60,
+      "care_icons": {
+        "temp": "temp_hot",
+        "fabric": "fabric_normal",
+        "dry": "dry_tumble",
+        "bleach": "bleach_no",
+        "iron": "iron_yes"
+      },
+      "sort_bins": {
+        "levels_1_3": "bin_darks",
+        "levels_4_10": "bin_60",
+        "levels_11_plus": "bin_cotton_machine"
+      },
       "can_bleach": false,
       "can_tumble_dry": true,
-      "max_spin": 1000
+      "pocket_chance": 0.1,
+      "button_reward": 1
+    },
+    {
+      "id": "white_sheets",
+      "name": "White Bed Sheets",
+      "description": "Cotton sheets - hot wash to kill germs.",
+      "unlock_level": 4,
+      "color": "white",
+      "color_group": "lights",
+      "fabric_type": "cotton",
+      "wash_method": "machine",
+      "temperature": 60,
+      "care_icons": {
+        "temp": "temp_hot",
+        "fabric": "fabric_normal",
+        "dry": "dry_tumble",
+        "bleach": "bleach_yes",
+        "iron": "iron_yes"
+      },
+      "sort_bins": {
+        "levels_1_3": "bin_lights",
+        "levels_4_10": "bin_60",
+        "levels_11_plus": "bin_cotton_machine"
+      },
+      "can_bleach": true,
+      "can_tumble_dry": true,
+      "pocket_chance": 0.0,
+      "button_reward": 2
+    },
+    {
+      "id": "silk_blouse",
+      "name": "Silk Blouse",
+      "description": "Handle with care - machine wash will ruin it.",
+      "unlock_level": 11,
+      "color": "light_pink",
+      "color_group": "lights",
+      "fabric_type": "silk",
+      "wash_method": "hand_wash",
+      "temperature": 30,
+      "care_icons": {
+        "temp": "temp_cold",
+        "fabric": "fabric_delicate",
+        "dry": "dry_air",
+        "bleach": "bleach_no",
+        "iron": "iron_no"
+      },
+      "sort_bins": {
+        "levels_1_3": "bin_lights",
+        "levels_4_10": "bin_30",
+        "levels_11_plus": "bin_handwash_sink"
+      },
+      "can_bleach": false,
+      "can_tumble_dry": false,
+      "pocket_chance": 0.05,
+      "button_reward": 4
     }
   ],
-  "baskets": [
+  "bins": [
     {
-      "id": "basket_white_40",
-      "label": "White 40°",
-      "color": "white",
-      "temperature": 40,
-      "fabric_types": ["cotton"]
+      "id": "bin_lights",
+      "label": "Lights",
+      "description": "Light-colored clothes",
+      "active_from_level": 1,
+      "sort_rule": "color_group",
+      "accepts_color_groups": ["lights"],
+      "accepts_temperatures": [],
+      "accepts_fabric_types": [],
+      "accepts_wash_method": "machine",
+      "position_hint": "shelf_left"
     },
     {
-      "id": "basket_dark_30",
-      "label": "Dark 30°",
-      "color": "dark_blue",
-      "temperature": 30,
-      "fabric_types": ["cotton", "polyester"]
+      "id": "bin_darks",
+      "label": "Darks",
+      "description": "Dark-colored clothes",
+      "active_from_level": 1,
+      "sort_rule": "color_group",
+      "accepts_color_groups": ["darks"],
+      "accepts_temperatures": [],
+      "accepts_fabric_types": [],
+      "accepts_wash_method": "machine",
+      "position_hint": "shelf_right"
     },
     {
-      "id": "basket_wool_30",
-      "label": "Wool 30°",
-      "color": "gray",
-      "temperature": 30,
-      "fabric_types": ["wool"]
+      "id": "bin_30",
+      "label": "30°",
+      "description": "Cold wash - delicates and darks",
+      "active_from_level": 4,
+      "sort_rule": "temperature",
+      "accepts_color_groups": [],
+      "accepts_temperatures": [30],
+      "accepts_fabric_types": [],
+      "accepts_wash_method": "machine",
+      "position_hint": "shelf_left"
+    },
+    {
+      "id": "bin_40",
+      "label": "40°",
+      "description": "Warm wash - most cottons and synthetics",
+      "active_from_level": 4,
+      "sort_rule": "temperature",
+      "accepts_color_groups": [],
+      "accepts_temperatures": [40],
+      "accepts_fabric_types": [],
+      "accepts_wash_method": "machine",
+      "position_hint": "shelf_center"
+    },
+    {
+      "id": "bin_60",
+      "label": "60°",
+      "description": "Hot wash - whites and towels",
+      "active_from_level": 4,
+      "sort_rule": "temperature",
+      "accepts_color_groups": [],
+      "accepts_temperatures": [60],
+      "accepts_fabric_types": [],
+      "accepts_wash_method": "machine",
+      "position_hint": "shelf_right"
+    },
+    {
+      "id": "bin_wool_delicate",
+      "label": "Wool / Delicate",
+      "description": "Gentle fabrics - delicate cycle only",
+      "active_from_level": 11,
+      "sort_rule": "fabric_wash_method",
+      "accepts_color_groups": [],
+      "accepts_temperatures": [30],
+      "accepts_fabric_types": ["wool"],
+      "accepts_wash_method": "machine",
+      "position_hint": "floor_left"
+    },
+    {
+      "id": "bin_handwash_sink",
+      "label": "Hand Wash",
+      "description": "Must be washed in the sink - no machine!",
+      "active_from_level": 11,
+      "sort_rule": "fabric_wash_method",
+      "accepts_color_groups": [],
+      "accepts_temperatures": [30],
+      "accepts_fabric_types": ["silk", "cashmere"],
+      "accepts_wash_method": "hand_wash",
+      "position_hint": "sink"
+    },
+    {
+      "id": "bin_cotton_machine",
+      "label": "Cotton",
+      "description": "Cotton items - machine wash",
+      "active_from_level": 11,
+      "sort_rule": "fabric_wash_method",
+      "accepts_color_groups": [],
+      "accepts_temperatures": [40, 60],
+      "accepts_fabric_types": ["cotton", "denim"],
+      "accepts_wash_method": "machine",
+      "position_hint": "shelf_center"
+    },
+    {
+      "id": "bin_synthetics_machine",
+      "label": "Synthetics",
+      "description": "Polyester and synthetic blends",
+      "active_from_level": 11,
+      "sort_rule": "fabric_wash_method",
+      "accepts_color_groups": [],
+      "accepts_temperatures": [40],
+      "accepts_fabric_types": ["polyester", "nylon", "acrylic"],
+      "accepts_wash_method": "machine",
+      "position_hint": "floor_right"
+    }
+  ],
+  "level_configs": [
+    {
+      "level": 1,
+      "title": "Lights and Darks",
+      "tutorial_text": "Sort clothes by color! Light colors go in one basket, dark colors in the other.",
+      "sort_rule": "color_group",
+      "active_bins": ["bin_lights", "bin_darks"],
+      "item_pool": ["white_tshirt", "dark_jeans", "sports_shirt", "red_socks"],
+      "item_count": 8,
+      "points_per_correct": 10,
+      "points_per_wrong": -2
+    },
+    {
+      "level": 2,
+      "title": "More Colors",
+      "tutorial_text": "More clothes are piling up! Keep sorting by light and dark.",
+      "sort_rule": "color_group",
+      "active_bins": ["bin_lights", "bin_darks"],
+      "item_pool": ["white_tshirt", "dark_jeans", "sports_shirt", "red_socks"],
+      "item_count": 10,
+      "points_per_correct": 10,
+      "points_per_wrong": -2
+    },
+    {
+      "level": 3,
+      "title": "Color Pro",
+      "tutorial_text": "You're getting the hang of it! Sort the whole basket perfectly.",
+      "sort_rule": "color_group",
+      "active_bins": ["bin_lights", "bin_darks"],
+      "item_pool": ["white_tshirt", "dark_jeans", "sports_shirt", "red_socks"],
+      "item_count": 12,
+      "points_per_correct": 10,
+      "points_per_wrong": -2
+    },
+    {
+      "level": 4,
+      "title": "Reading the Tags",
+      "tutorial_text": "Time to check the care labels! Sort by the temperature number on the tag.",
+      "sort_rule": "temperature",
+      "active_bins": ["bin_30", "bin_40"],
+      "item_pool": ["white_tshirt", "dark_jeans", "sports_shirt"],
+      "item_count": 8,
+      "points_per_correct": 15,
+      "points_per_wrong": -3
+    },
+    {
+      "level": 5,
+      "title": "Hot Wash",
+      "tutorial_text": "Some clothes need a really hot wash. Look carefully at those tags!",
+      "sort_rule": "temperature",
+      "active_bins": ["bin_30", "bin_40", "bin_60"],
+      "item_pool": ["white_tshirt", "dark_jeans", "sports_shirt", "red_socks", "white_sheets"],
+      "item_count": 10,
+      "points_per_correct": 15,
+      "points_per_wrong": -3
+    },
+    {
+      "level": 11,
+      "title": "Fabric Expert",
+      "tutorial_text": "Some clothes are very delicate. Silk must be washed by hand in the sink!",
+      "sort_rule": "fabric_wash_method",
+      "active_bins": ["bin_cotton_machine", "bin_wool_delicate", "bin_handwash_sink"],
+      "item_pool": ["white_tshirt", "dark_jeans", "wool_sweater", "silk_blouse", "red_socks"],
+      "item_count": 10,
+      "points_per_correct": 20,
+      "points_per_wrong": -5
+    }
+  ],
+  "shop_items": [
+    {
+      "id": "cow_hat_bow",
+      "name": "Bow for Bessie",
+      "type": "mascot_cosmetic",
+      "cost_buttons": 10,
+      "description": "A little pink bow for the cow mascot."
+    },
+    {
+      "id": "cow_hat_tophat",
+      "name": "Top Hat for Bessie",
+      "type": "mascot_cosmetic",
+      "cost_buttons": 20,
+      "description": "A fancy top hat for a fancy cow."
+    },
+    {
+      "id": "room_plant_fern",
+      "name": "Fern Corner",
+      "type": "room_decor",
+      "cost_buttons": 25,
+      "description": "A cozy fern for the laundry room corner."
+    },
+    {
+      "id": "room_rug_blue",
+      "name": "Blue Rug",
+      "type": "room_decor",
+      "cost_buttons": 30,
+      "description": "A soft blue rug to brighten the floor."
     }
   ]
 }
