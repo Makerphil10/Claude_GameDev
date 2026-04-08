@@ -16,3 +16,9 @@ Thumbs.db
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# Python / scraper
+.env
+scrapers/output/
+__pycache__/
+*.pyc
