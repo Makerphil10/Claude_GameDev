@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV – Philipp Gebhardt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sidebar-bg:    #1a1a2e;
+      --sidebar-deep:  #0f1123;
+      --accent:        #e94560;
+      --accent-light:  #ff6b84;
+      --blue:          #4a90d9;
+      --text-light:    #e8eaf0;
+      --text-muted:    #9ca3bf;
+      --main-bg:       #f7f8fc;
+      --white:         #ffffff;
+      --text-dark:     #1e2140;
+      --text-body:     #3d4166;
+      --border:        #dde1f0;
+      --tag-bg:        #eef1fb;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: #e4e7f2;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 32px 16px;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--white);
+      display: flex;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    /* ─── SIDEBAR ─── */
+    .sidebar {
+      width: 31%;
+      background: linear-gradient(175deg, var(--sidebar-bg) 0%, var(--sidebar-deep) 100%);
+      color: var(--text-light);
+      padding: 36px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 1px;
+      box-shadow: 0 4px 20px rgba(233,69,96,0.45);
+      margin-bottom: 4px;
+    }
+
+    .sidebar-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.25;
+    }
+
+    .sidebar-title {
+      font-size: 10.5px;
+      font-weight: 500;
+      color: var(--accent-light);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .sidebar-section-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid rgba(233,69,96,0.35);
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+    }
+
+    /* Contact */
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10.5px;
+      color: var(--text-muted);
+    }
+    .contact-list li strong { color: var(--text-light); font-weight: 500; }
+    .contact-icon {
+      width: 22px;
+      height: 22px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+
+    /* Skills */
+    .skill-item { margin-bottom: 10px; }
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--text-light);
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    .skill-label span { color: var(--text-muted); font-weight: 400; }
+    .skill-bar-bg {
+      height: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .skill-bar {
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    }
+
+    /* Languages */
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .lang-name { font-size: 10.5px; color: var(--text-light); font-weight: 500; }
+    .lang-dots { display: flex; gap: 4px; }
+    .lang-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+    }
+    .lang-dot.filled { background: var(--accent); }
+
+    /* Interests */
+    .interest-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .interest-tag {
+      font-size: 9.5px;
+      background: rgba(255,255,255,0.08);
+      color: var(--text-muted);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-weight: 500;
+    }
+
+    /* ─── MAIN ─── */
+    .main {
+      flex: 1;
+      background: var(--main-bg);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .main-header { border-bottom: 2px solid var(--border); padding-bottom: 16px; }
+    .main-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.1;
+    }
+    .main-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .section-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--sidebar-bg);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+      border-radius: 1px;
+    }
+
+    /* Profile */
+    .profile-text {
+      font-size: 10.5px;
+      line-height: 1.7;
+      color: var(--text-body);
+    }
+
+    /* Experience */
+    .exp-item { display: flex; gap: 14px; margin-bottom: 16px; }
+    .exp-item:last-child { margin-bottom: 0; }
+    .exp-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 4px; }
+    .exp-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(233,69,96,0.18);
+    }
+    .exp-line {
+      flex: 1;
+      width: 2px;
+      background: var(--border);
+      margin-top: 4px;
+    }
+    .exp-item:last-child .exp-line { display: none; }
+    .exp-content { flex: 1; padding-bottom: 4px; }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; }
+    .exp-role {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.3;
+      max-width: 75%;
+    }
+    .exp-date {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(233,69,96,0.08);
+      padding: 2px 7px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+    .exp-company {
+      font-size: 10px;
+      color: var(--blue);
+      font-weight: 600;
+      margin: 2px 0 6px;
+    }
+    .exp-bullets { list-style: none; }
+    .exp-bullets li {
+      font-size: 10px;
+      color: var(--text-body);
+      line-height: 1.5;
+      padding-left: 12px;
+      position: relative;
+      margin-bottom: 2px;
+    }
+    .exp-bullets li::before {
+      content: '▸';
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-size: 9px;
+    }
+
+    /* Education */
+    .edu-item { display: flex; gap: 12px; align-items: flex-start; }
+    .edu-icon {
+      width: 30px; height: 30px;
+      background: linear-gradient(135deg, var(--sidebar-bg), var(--blue));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .edu-degree { font-size: 11px; font-weight: 700; color: var(--text-dark); }
+    .edu-school { font-size: 10px; color: var(--blue); font-weight: 600; margin-top: 1px; }
+    .edu-year { font-size: 9.5px; color: var(--text-muted); margin-top: 2px; }
+
+    /* Achievements */
+    .achievements-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .achievement-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .achievement-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .achievement-label {
+      font-size: 9px;
+      color: var(--text-body);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* ─── PRINT ─── */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+        margin: 0;
+      }
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .sidebar {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        color-adjust: exact;
+      }
+      .skill-bar,
+      .exp-dot,
+      .accent,
+      .achievement-number {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar">
+
+    <!-- Avatar + Name -->
+    <div>
+      <div class="avatar">PG</div>
+      <div class="sidebar-name">Philipp<br>Gebhardt</div>
+      <div class="sidebar-title">Retail &amp; Digital Innovation</div>
+    </div>
+
+    <!-- Kontakt -->
+    <div>
+      <div class="sidebar-section-label">Kontakt</div>
+      <ul class="contact-list">
+        <li>
+          <div class="contact-icon">✉</div>
+          <strong>deine@email.de</strong>
+        </li>
+        <li>
+          <div class="contact-icon">☎</div>
+          <strong>+49 XXX XXXXXXX</strong>
+        </li>
+        <li>
+          <div class="contact-icon">⌂</div>
+          <strong>Deutschland</strong>
+        </li>
+        <li>
+          <div class="contact-icon">in</div>
+          <strong>linkedin.com/in/philipp-g</strong>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Skills -->
+    <div>
+      <div class="sidebar-section-label">Skills</div>
+      <div class="skill-item">
+        <div class="skill-label">Brand Management <span>95%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:95%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Strategische Planung <span>90%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Projektmanagement <span>90%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Loyalty &amp; CRM <span>85%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Generative AI <span>80%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:80%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Digital Activation <span>85%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Präsentation &amp; Komm. <span>90%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Unity / Godot <span>70%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar" style="width:70%"></div></div>
+      </div>
+    </div>
+
+    <!-- Sprachen -->
+    <div>
+      <div class="sidebar-section-label">Sprachen</div>
+      <div class="lang-item">
+        <span class="lang-name">Deutsch</span>
+        <div class="lang-dots">
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+        </div>
+      </div>
+      <div class="lang-item">
+        <span class="lang-name">Englisch</span>
+        <div class="lang-dots">
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interessen -->
+    <div>
+      <div class="sidebar-section-label">Interessen</div>
+      <div class="interest-tags">
+        <span class="interest-tag">🎮 Indie Games</span>
+        <span class="interest-tag">🏒 Eishockey</span>
+        <span class="interest-tag">🎸 Punk Rock</span>
+        <span class="interest-tag">👨‍👩‍👧 Familie</span>
+        <span class="interest-tag">⚡ Godot / Unity</span>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ═══ MAIN ═══ -->
+  <main class="main">
+
+    <!-- Header -->
+    <div class="main-header">
+      <div class="main-name">Philipp Gebhardt</div>
+      <div class="main-title">Brand &amp; Digital Innovation · Retail Gamification · Game Design</div>
+    </div>
+
+    <!-- Profil -->
+    <section>
+      <div class="section-title">Profil</div>
+      <p class="profile-text">
+        Erfahrener Brand- und Digital-Manager mit über 13 Jahren bei einem der weltweit führenden Sportartikelhersteller.
+        Spezialisiert auf die Schnittstelle zwischen Retail-Innovation, Gamification und digitaler Aktivierung.
+        Verbinde strategisches Denken mit kreativer Umsetzungskraft – zuletzt als selbstständiger Berater für
+        Retail Gamification &amp; Immersive Experiences. Zusätzliche Leidenschaft für die Entwicklung von Indie-Games
+        mit Unity &amp; Godot als Ausdruck digitaler Lösungskompetenz.
+      </p>
+    </section>
+
+    <!-- Berufserfahrung -->
+    <section>
+      <div class="section-title">Berufserfahrung</div>
+
+      <div class="exp-item">
+        <div class="exp-dot-col">
+          <div class="exp-dot"></div>
+          <div class="exp-line"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <div class="exp-role">Strategischer Berater – Retail Gamification &amp; Immersive Experiences</div>
+            <div class="exp-date">Okt 2025 – heute</div>
+          </div>
+          <div class="exp-company">Selbstständig / Consultant · Deutschland</div>
+          <ul class="exp-bullets">
+            <li>Beratung von Retail-Brands bei der Entwicklung gamifizierter Kundenerlebnisse</li>
+            <li>Konzeption immersiver Instore- und digitaler Aktivierungsformate</li>
+            <li>Entwicklung von Indie-Games (Godot) als Prototypen für Retail-Gamification</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot-col">
+          <div class="exp-dot"></div>
+          <div class="exp-line"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <div class="exp-role">Global Senior Manager Retail Service &amp; Experiences</div>
+            <div class="exp-date">Aug 2021 – Sep 2025</div>
+          </div>
+          <div class="exp-company">adidas AG · Herzogenaurach</div>
+          <ul class="exp-bullets">
+            <li>Verantwortung für globale Retail-Service-Strategie und Kundenerlebnisse</li>
+            <li>Steuerung internationaler Teams und Distributoren mit +35% Engagement-Steigerung</li>
+            <li>Implementierung datengetriebener Experience-Konzepte mit +20% Kundenzufriedenheit</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot-col">
+          <div class="exp-dot"></div>
+          <div class="exp-line"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <div class="exp-role">Manager CRM / Membership in Retail</div>
+            <div class="exp-date">Okt 2020 – Jul 2021</div>
+          </div>
+          <div class="exp-company">adidas AG · Herzogenaurach</div>
+          <ul class="exp-bullets">
+            <li>Aufbau und Skalierung des Retail-Membership-Programms</li>
+            <li>CRM-Strategieentwicklung für Omnichannel-Kundenbindung</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot-col">
+          <div class="exp-dot"></div>
+          <div class="exp-line"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <div class="exp-role">Manager Digital Activation</div>
+            <div class="exp-date">Nov 2016 – Sep 2020</div>
+          </div>
+          <div class="exp-company">adidas AG · Herzogenaurach</div>
+          <ul class="exp-bullets">
+            <li>Leitung digitaler Retail-Aktivierungskampagnen mit +40% Abverkaufsrate</li>
+            <li>Entwicklung innovativer Omnichannel-Kommunikationsformate</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot-col">
+          <div class="exp-dot"></div>
+          <div class="exp-line"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <div class="exp-role">Manager Digital Experience</div>
+            <div class="exp-date">Mär 2015 – Okt 2016</div>
+          </div>
+          <div class="exp-company">adidas AG · Herzogenaurach</div>
+          <ul class="exp-bullets">
+            <li>Konzeption und Umsetzung digitaler Markenerlebnisse im Retail</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot-col">
+          <div class="exp-dot" style="background:#4a90d9;box-shadow:0 0 0 3px rgba(74,144,217,0.18)"></div>
+          <div class="exp-line"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <div class="exp-role">Marketing &amp; Event Management</div>
+            <div class="exp-date">Apr 2012 – Feb 2015</div>
+          </div>
+          <div class="exp-company">Friends of Sports GmbH</div>
+          <ul class="exp-bullets">
+            <li>Planung und Durchführung nationaler Sport-Marketing- und Event-Projekte</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Ausbildung + Erfolge nebeneinander -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+      <section>
+        <div class="section-title">Ausbildung</div>
+        <div class="edu-item">
+          <div class="edu-icon">🎓</div>
+          <div>
+            <div class="edu-degree">Bachelor of Arts</div>
+            <div class="edu-school">Duale Hochschule Baden-Württemberg</div>
+            <div class="edu-year">Abschluss 2012</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">Zertifizierungen</div>
+        <div class="edu-item">
+          <div class="edu-icon">🏅</div>
+          <div>
+            <div class="edu-degree">Maker Lab Project</div>
+            <div class="edu-school">Indie Game Development</div>
+            <div class="edu-year">Unity &amp; Godot · 2025</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Erfolge -->
+    <section>
+      <div class="section-title">Messbare Erfolge</div>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <div class="achievement-number">+40%</div>
+          <div class="achievement-label">Abverkaufsrate durch digitale Aktivierung</div>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-number">+35%</div>
+          <div class="achievement-label">Team- &amp; Distributions&shy;partner-Engagement</div>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-number">+20%</div>
+          <div class="achievement-label">Höhere Kundenzufriedenheit im Retail</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
